@@ -34,6 +34,9 @@
       padding: 4rem 2rem 2rem;
       text-align: center;
     }
+    #about {
+      margin-top: 2rem;
+    }
     .skills-area {
       background: #ffffff;
       padding: 4rem 2rem 2rem;
@@ -76,10 +79,13 @@
     .video-frame, .photo-gallery {
       margin: 1rem 0;
     }
+    .photo-gallery {
+      display: flex;
+      gap: 2%;
+      justify-content: center;
+    }
     .photo-gallery img {
-      max-width: 48%;
-      margin: 1%;
-      display: inline-block;
+      width: 48%;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
@@ -97,22 +103,23 @@
     <a href="#hero">Home</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
-    <a href="#qisui">Qisui</a>
+    <a href="#qisui">祈萃</a>
     <a href="#works">Works</a>
   </nav>
 
   <div class="hero-area">
     <header id="hero">
       <h1>Tomoki Noguchi</h1>
-      <p>Media Expression / Particle Beam Research</p>
+      <p>co-founder of 祈萃 / video editer of DivingPartner</p>
     </header>
     <section id="about" class="card">
       <h2>About</h2>
       <p>
         筑波大学理工学群 応用理工学類 冨田研究室所属<br>
-        現在は大学内の研究施設や高エネルギー加速器研究機構(KEK)で加速器を使ったイオンビームの研究に従事。<br>
-        個人として音楽イベントオーガナイズチームを立ち上げ、イベント運営やDJ/VJとして活動している。<br>
-        動画編集にも取り組んでいる。
+        現在は大学内の研究施設や高エネルギー加速器研究機構(KEK)で加速器を使ったイオンビームの研究に従事。<br><br>
+        個人活動<br>
+        音楽イベントオーガナイズチームの運営及びDJ/VJ<br>
+        ダイビングサイト動画編集者
       </p>
     </section>
   </div>
@@ -129,10 +136,23 @@
   </div>
 
   <div class="main-area">
+    <section id="qisui" >
+      <h2>祈萃</h2>
 
-    <section id="qisui" class="card">
-      <h2>Qisui</h2>
-      <a href="https://www.instagram.com/qisui.sui" target="_blank">@qisui.sui</a>
+      <div class="about qisui">
+        <h3>About 祈萃</h3>
+        <p>
+          祈萃(qisui)とは回ごとに様々な音楽をフィーチャリングして開催される、ミュージックパーティーシリーズです。<br>
+          毎回様々なコミュニティからDJやアーティストをお呼びし、コンセプチュアルなパーティーを開催します。
+        </p>
+        <div class="photo-gallery">
+          <img src="assets/photo1.png" alt="Ghost Tower System" />
+          <img src="assets/photo2.png" alt="Mid-air Optical Diagram" />
+        </div>
+      </div>
+
+      
+      <a href="https://www.instagram.com/qisui.sui" target="_blank">Our Instagram</a>
     </section>
 
     <section id="works">
@@ -163,8 +183,6 @@
         <p>光学系の実験写真および理論図。</p>
       </div>
     </section>
-
-    
   </div>
 </body>
 </html>
