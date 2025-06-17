@@ -5,144 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tomoki Noguchi | Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #222;
+      background: #fff;
+    }
+    header {
+      background: #f8f8f8;
+      padding: 2rem;
+      text-align: center;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+    .card {
+      background: #fdfdfd;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .video-frame, .photo-gallery {
+      margin: 1rem 0;
+    }
+    .photo-gallery img {
+      max-width: 48%;
+      margin: 1%;
+      display: inline-block;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <header id="hero">
-    <h1>野口朋輝 / Tomoki Noguchi</h1>
+    <h1>野口朋輝/Tomoki Noguchi</h1>
   </header>
 
-  <section id="about">
+  <section id="about" class="card">
     <h2>About</h2>
     <p>
       筑波大学理工学群 応用理工学類 冨田研究室所属<br>現在は大学内の研究施設や高エネルギー加速器研究機構(KEK)で加速器を使ったイオンビームの研究に従事。<br>個人として音楽イベントオーガナイズチームを立ち上げ、イベント運営やDJ/VJとして活動している。<br>動画編集にも取り組んでいる。
     </p>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Premiere Pro 
-      <li>After Effects
-      <li>TouchDesigner<!DOCTYPE html>
-        <html lang="ja">
-        <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Tomoki Noguchi | Portfolio</title>
-          <link rel="stylesheet" href="style.css">
-          <style>
-            body {
-              font-family: sans-serif;
-              margin: 0;
-              padding: 0;
-              line-height: 1.6;
-              color: #222;
-              background: #fff;
-            }
-            header {
-              background: #f8f8f8;
-              padding: 2rem;
-              text-align: center;
-            }
-            section {
-              padding: 2rem;
-              max-width: 900px;
-              margin: auto;
-            }
-            h1, h2, h3 {
-              margin-top: 0;
-            }
-            .card {
-              background: #fdfdfd;
-              border-radius: 12px;
-              box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-              padding: 1.5rem;
-              margin-bottom: 2rem;
-            }
-            .video-frame, .photo-gallery {
-              margin: 1rem 0;
-            }
-            .photo-gallery img {
-              max-width: 48%;
-              margin: 1%;
-              display: inline-block;
-              border-radius: 8px;
-              box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            }
-            a {
-              color: #0077cc;
-              text-decoration: none;
-            }
-            a:hover {
-              text-decoration: underline;
-            }
-          </style>
-        </head>
-        <body>
-          <header id="hero">
-            <h1>Tomoki Noguchi</h1>
-            <p>Media Expression / Particle Beam Research</p>
-          </header>
-        
-          <section id="about" class="card">
-            <h2>About</h2>
-            <p>
-        　　　　筑波大学理工学群 応用理工学類 冨田研究室所属<br>現在は大学内の研究施設や高エネルギー加速器研究機構(KEK)で加速器を使ったイオンビームの研究に従事。<br>個人として音楽イベントオーガナイズチームを立ち上げ、イベント運営やDJ/VJとして活動している。<br>動画編集にも取り組んでいる。
-            </p>
-          </section>
-        
-          <section id="works">
-            <h2>Works</h2>
-        
-            <div class="work-item video card">
-              <h3>Into the Blue</h3>
-              <div class="video-frame">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/CHw0sFkeuFI" frameborder="0" allowfullscreen></iframe>
-              </div>
-              <p>海中の光と音を題材にした映像作品。</p>
-            </div>
-        
-            <div class="work-item video card">
-              <h3>Diving Partner</h3>
-              <div class="video-frame">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/OnGm9opuY7U" frameborder="0" allowfullscreen></iframe>
-              </div>
-              <p>ダイビングの協働性や偶発的な発見をテーマにした映像表現。</p>
-            </div>
-        
-            <div class="work-item photos card">
-              <h3>Photo Works</h3>
-              <div class="photo-gallery">
-                <img src="assets/photo1.png" alt="Ghost Tower System" />
-                <img src="assets/photo2.png" alt="Mid-air Optical Diagram" />
-              </div>
-              <p>光学系の実験写真および理論図。</p>
-            </div>
-          </section>
-        
-          <section id="skills" class="card">
-            <h2>Skills</h2>
-            <ul>
-              <li>Premiere Pro – 映像編集</li>
-              <li>After Effects – モーショングラフィックス・合成</li>
-              <li>TouchDesigner – インタラクティブビジュアル制作</li>
-              <li>Python – 制御系やプロトタイピングに活用</li>
-              <li>HTML/CSS – ポートフォリオなどWeb制作</li>
-            </ul>
-          </section>
-        
-          <section id="instagram" class="card">
-            <h2>Instagram</h2>
-            <a href="https://www.instagram.com/qisui.sui" target="_blank">@qisui.sui</a>
-          </section>
-        </body>
-        </html>
-        
-      <li>Languages: C, Python, HTML, CSS, JavaScript 
-    </ul>
-  </section>
-
-  <section id="Qisui">
+  <section id="Qisui" class="card">
     <h2>Qisui</h2>
     <a href="https://www.instagram.com/qisui.sui" target="_blank">@qisui.sui</a>
   </section>
@@ -150,32 +73,41 @@
   <section id="works">
     <h2>Works</h2>
 
-    <div class="work-item video">
+    <div class="work-item video card">
       <h3>Into the Blue</h3>
       <div class="video-frame">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/CHw0sFkeuFI" frameborder="0" allowfullscreen></iframe>
       </div>
-      <p>所属サークルの新歓用に作成したPV<br></p>
+      <p>所属サークルの新歓用に作成したPV</p>
     </div>
 
-    <div class="work-item video">
+    <div class="work-item video card">
       <h3>Diving Partner</h3>
       <div class="video-frame">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/OnGm9opuY7U" frameborder="0" allowfullscreen></iframe>
       </div>
-      <p>ダイビングサイト始動を記念して制作したPV<br></p>
+      <p>ダイビングサイト始動を記念して制作したPV</p>
     </div>
 
-    <div class="work-item photos">
+    <div class="work-item photos card">
       <h3>Photo Works</h3>
       <div class="photo-gallery">
         <img src="assets/photo1.png" alt="Ghost Tower System" />
         <img src="assets/photo2.png" alt="Mid-air Optical Diagram" />
       </div>
-      <p>仮写真、今から変更<br></p>
+      <p>変更</p>
     </div>
   </section>
 
- 
+  <section id="skills" class="card">
+    <h2>Skills</h2>
+    <ul>
+      <li>Premiere Pro</li>
+      <li>After Effects</li>
+      <li>TouchDesigner</li>
+      <li>Languages : C, Python, HTML, CSS, JavaScript</li>
+    </ul>
+  </section>
+
 </body>
 </html>
