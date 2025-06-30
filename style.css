@@ -45,3 +45,24 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 
+.video-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.video-grid .card {
+  flex: 1 1 45%;
+  box-sizing: border-box;
+}
+
+.video-grid .card h3 {
+  min-height: 2em; 
+}
+
+@media (max-width: 600px) {
+  .video-grid .card {
+    flex: 1 1 100%;
+  }
+}

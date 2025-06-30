@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <link rel="icon" href="assets/android-chrome-192x192.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tomoki Noguchi | Portfolio</title>
@@ -97,6 +96,29 @@
     a:hover {
       text-decoration: underline;
     }
+
+    .video-grid {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .video-grid .card {
+      flex: 1 1 45%;
+      box-sizing: border-box;
+    }
+
+    .video-grid .card h3 {
+      min-height: 2em; 
+    }
+
+    @media (max-width: 600px) {
+      .video-grid .card {
+        flex: 1 1 100%;
+      }
+    }
+    
   </style>
 </head>
 <body>
@@ -111,7 +133,6 @@
   <div class="hero-area">
     <header id="hero">
       <h1>Tomoki Noguchi</h1>
-      <p>co-founder of 祈萃 / video editer</p>
     </header>
     <section id="about" class="card">
       <h2>About</h2>
@@ -119,8 +140,8 @@
         筑波大学理工学群 応用理工学類 冨田研究室所属<br>
         現在は大学内の研究施設や高エネルギー加速器研究機構(KEK)で加速器を使った<br>イオンビームの研究に従事。<br><br>
         個人活動<br>
-        音楽イベントオーガナイズチーム祈萃の運営及びDJ/VJ<br>
-        ダイビング動画編集
+        音楽イベントオーガナイズチームの運営及びDJ/VJ<br>
+        ダイビングサイト動画編集者
       </p>
     </section>
   </div>
@@ -128,9 +149,9 @@
   <div class="skills-area" id="skills">
     <h2 style="text-align:center;">Skills</h2>
     <div class="skills-grid">
-      <div class="skill-card">Premiere Pro<br></div>
-      <div class="skill-card">After Effects<br></div>
-      <div class="skill-card">TouchDesigner<br></div>
+      <div class="skill-card">Premiere Pro<br><small>映像編集</small></div>
+      <div class="skill-card">After Effects<br><small>モーショングラフィックス・合成</small></div>
+      <div class="skill-card">TouchDesigner<br><small>インタラクティブビジュアル制作</small></div>
       <div class="skill-card">Languages<br><small>C,Python,HTML,CSS,JavaScript</small></div>
     </div>
   </div>
@@ -140,7 +161,7 @@
       <h2>祈萃</h2>
 
       <div class="about qisui card">
-        <h3><What is 祈萃></h3>
+        <h3>About 祈萃</h3>
         <p>
           祈萃(qisui)とは回ごとに様々な音楽をフィーチャリングして開催される、ミュージックパーティーシリーズです。<br>
           毎回様々なコミュニティからDJやアーティストをお呼びし、コンセプチュアルなパーティーを開催します。
@@ -150,14 +171,11 @@
           <img src="assets/photo2.png" alt="Mid-air Optical Diagram" />
         </div>
 
-        <div style="text-align: center; margin-top: 1.5rem;">
-          <a href="https://www.instagram.com/qisui.sui" target="_blank">
-            <img src="assets/qisui_icon_cropped.png" alt="Instagram" width="60" height="60" style="border-radius: 12px;" />
-          </a>
-          <p style="margin-top: 0.5rem;">Instagram</p>
-        </div>
+        <a href="https://www.instagram.com/qisui.sui" target="_blank">Please check our Instagram</a>
+      </div>
 
-        <h3><br><Latest Party></h3>
+      <div class="Latest Party card">
+        <h3>Latest Party</h3>
         <p>
           6/13につくば市内でParty(Pacific Groove)を開催しました。<br>
           過去最多の70人を超える来場者を達成し、全体で約25万円の売り上げを記録しました。
@@ -166,54 +184,40 @@
           <img src="assets/photo1.png" alt="Ghost Tower System" />
           <img src="assets/photo2.png" alt="Mid-air Optical Diagram" />
         </div>
+      </div>
 
-     </div>
+
     </section>
 
     <section id="works">
       <h2>Works</h2>
 
-      <div class="work-item video card">
-        <h3>【Time to Dive】</h3>
-        <div class="video-frame">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/OnGm9opuY7U" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <p>ダイビングサイトDivingPartner始動を記念して制作したPV<br></p>
-        <h5>・About DivingPartner</h5>
-        <p>
-          ダイビングの記録を残せるダイバー向けサイトです。
-          現在アプリの開発にも取り組んでいます。
-        </p>
-        <div style="text-align: center; margin-top: 1.5rem;">
-          <a href="https://diving-partner2.web.app" target="_blank">
-            <img src="assets/S__44736520.jpg" alt="Website" width="60" height="60" style="border-radius: 12px;" />
-          </a>
-          <p style="margin-top: 0.5rem;">Website</p>
-        </div>
-
-        <br>
-        <h3>【Into the Blue】</h3>
-        <div class="video-frame">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/CHw0sFkeuFI" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <p>所属サークル新歓用PV</p>
-        <br>
-
-        <div class="work-item key system">
-          <h3>【Key System】</h3>
-          <div class="photo-gallery">
-            <img src="assets/photo1.png" alt="Ghost Tower System" />
-            <img src="assets/photo2.png" alt="Mid-air Optical Diagram" />
+      <div class="video-grid">
+        <div class="work-item video card">
+          <h3>Into the Blue</h3>
+          <div class="video-frame">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/CHw0sFkeuFI" frameborder="0" allowfullscreen></iframe>
           </div>
-          <p>研究室居室に取り付けたドアの開錠システム</p>
+          <p>海中の光と音を題材にした映像作品。</p>
+        </div>
+
+        <div class="work-item video card">
+          <h3>Diving Partner</h3>
+          <div class="video-frame">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/OnGm9opuY7U" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <p>ダイビングサイト始動を記念して制作したPV</p>
         </div>
       </div>
 
-      
-
-      
-
-  
+      <div class="work-item photos card">
+        <h3>Photo Works</h3>
+        <div class="photo-gallery">
+          <img src="assets/photo1.png" alt="Ghost Tower System" />
+          <img src="assets/photo2.png" alt="Mid-air Optical Diagram" />
+        </div>
+        <p>光学系の実験写真および理論図。</p>
+      </div>
     </section>
   </div>
 </body>
