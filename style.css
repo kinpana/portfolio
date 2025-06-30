@@ -66,3 +66,23 @@ a:hover {
     flex: 1 1 100%;
   }
 }
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #004466;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1000;
+}
+
+.hero-area {
+  padding-top: 6rem;
+  background: #e0f4ff;
+  padding-bottom: 2rem;
+  text-align: center;
+}
