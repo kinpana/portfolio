@@ -93,11 +93,14 @@ nav {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  align-items: stretch;
 }
 
 .media-side-by-side img,
 .media-side-by-side video {
   width: 48%;
+  aspect-ratio: 4 / 3; 
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
