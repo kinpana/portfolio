@@ -1,336 +1,259 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="assets/android-chrome-192x192.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tomoki Noguchi | Portfolio</title>
-  <meta name="description" content="UI/UX志望。自主企画『祈萃』を軸に、映像・Web・研究を横断。就活向けに再設計したスタイリッシュなミニマル・ポートフォリオ。" />
-  <link rel="icon" href="assets/android-chrome-192x192.png" type="image/png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Tomoki Noguchi | Portfolio" />
-  <meta property="og:description" content="UI/UX志望。自主企画『祈萃』を軸に、映像・Web・研究を横断。" />
-  <meta property="og:image" content="assets/IMG_8721.jpg" />
-  <meta name="theme-color" content="#0b0c10" />
-
-  <!-- ========== Styles (内蔵CSS。必要ならstyles.cssへ外出し可) ========== -->
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* ========= Tokens ========= */
-    :root{
-      /* Surfaces */
-      --bg:#0b0c10; --surface:#101319; --surface-2:#141924; --line:#212634;
-      /* Text */
-      --text:#eef1f6; --muted:#a7afbf;
-      /* Brand */
-      --brand:#7aa2ff; --accent:#19b8a3; --danger:#ff6b6b;
-      /* Layout */
-      --radius:18px; --shadow:0 18px 60px rgba(0,0,0,.35); --container:1140px;
-      /* Type */
-      --h1:clamp(32px,6.2vw,64px); --h2:clamp(22px,3.2vw,36px); --h3:clamp(18px,2.2vw,22px); --lead:clamp(16px,1.6vw,20px); --body:16px;
-      --section:108px;
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #222;
+      background: #fff;
     }
-    :root[data-theme="light"], @media(prefers-color-scheme:light){
-      :root{ --bg:#fafbfc; --surface:#ffffff; --surface-2:#f4f6fa; --line:#e5e9f0; --text:#0e1320; --muted:#5d6676; --brand:#3a63ff; --accent:#12a794; --shadow:0 16px 40px rgba(0,0,0,.08); }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #004466;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero-area {
+      padding-top: 6rem;
+      background: #e0f4ff;
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+    }
+    #about {
+      margin-top: 2rem;
+    }
+    .skills-area {
+      background: #ffffff;
+      padding: 4rem 2rem 2rem;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .skill-card {
+      background: #fdfdfd;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1rem 1.5rem;
+      width: 250px;
+      text-align: center;
+    }
+    .main-area {
+      background: #ffffff;
+      padding: 2rem 0;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+    .card {
+      background: #fdfdfd;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .video-frame, .photo-gallery {
+      margin: 1rem 0;
+    }
+    .photo-gallery {
+      display: flex;
+      gap: 2%;
+      justify-content: center;
+    }
+    .photo-gallery img {
+      width: 48%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .video-grid {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .video-grid .card {
+      flex: 1 1 45%;
+      box-sizing: border-box;
+    }
+    .video-grid .card h3 {
+      min-height: 2em;
+    }
+    @media (max-width: 600px) {
+      .video-grid .card {
+        flex: 1 1 100%;
+      }
     }
 
-    /* ========= Base ========= */
-    *,*::before,*::after{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0; font-size:var(--body); line-height:1.75; letter-spacing:.02em; color:var(--text);
-      background:
-        radial-gradient(900px 600px at 80% -15%, color-mix(in oklab, var(--brand) 16%, transparent), transparent 60%),
-        radial-gradient(800px 600px at 0% 0%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 60%),
-        /* thin grid */
-        repeating-linear-gradient(90deg, color-mix(in oklab, var(--line) 60%, transparent) 0 1px, transparent 1px 24px),
-        repeating-linear-gradient(0deg, color-mix(in oklab, var(--line) 60%, transparent) 0 1px, transparent 1px 24px),
-        var(--bg);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", "Meiryo", "Helvetica Neue", Arial, sans-serif;
-      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    .media-side-by-side {
+      display: flex;
+      gap: 2%;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      align-items: stretch;
     }
-    img,video{ display:block; max-width:100%; border-radius:16px; }
-    a{ color:var(--brand); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-    .container{ width:min(100% - 40px, var(--container)); margin-inline:auto; }
-    .section{ padding:var(--section) 0; }
-    :target{ scroll-margin-top:96px; }
-    .visually-hidden{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
-    /* ========= Header ========= */
-    .site-header{ position:sticky; top:0; z-index:50; border-bottom:1px solid var(--line); backdrop-filter:saturate(150%) blur(10px); background: color-mix(in oklab, var(--bg) 82%, transparent); }
-    .site-header .wrap{ display:flex; align-items:center; gap:18px; padding:14px 0; }
-    .brand{ font-weight:900; letter-spacing:.08em; font-size:13px; display:inline-grid; place-items:center; width:38px; height:38px; border-radius:12px; background:var(--surface-2); box-shadow: inset 0 0 0 1px var(--line); color:var(--text); }
-    .nav{ display:flex; gap:16px; margin-left:8px; }
-    .nav a{ position:relative; color:var(--text); padding:8px 10px; border-radius:10px; }
-    .nav a::after{ content:""; position:absolute; left:10px; right:10px; bottom:-6px; height:2px; background:linear-gradient(90deg,var(--brand),var(--accent)); border-radius:2px; transform:scaleX(.6); opacity:0; transition:.25s ease; }
-    .nav a:hover,.nav a.is-active{ text-decoration:none; }
-    .nav a:hover::after,.nav a.is-active::after{ transform:scaleX(1); opacity:1; }
-    .theme-toggle{ margin-left:auto; border:1px solid var(--line); background:var(--surface-2); color:var(--text); border-radius:999px; padding:8px 10px; cursor:pointer; }
-
-    /* ========= Hero ========= */
-    .hero{ position:relative; }
-    .hero .container{ display:grid; gap:16px; }
-    .hero__title{ font-size:var(--h1); line-height:1.1; margin:0; letter-spacing:.01em; text-wrap:balance; }
-    .hero__lead{ font-size:var(--lead); color:var(--muted); margin:6px 0 0; }
-    .hero__title .underline{ background:linear-gradient(180deg, color-mix(in oklab, var(--accent) 22%, transparent), transparent); border-radius:8px; padding:0 .25em; }
-
-    /* ========= Section Head ========= */
-    .section__head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:28px; }
-    .section__head h2{ font-size:var(--h2); margin:0; letter-spacing:.02em; }
-    .section__kicker{ color:var(--muted); margin:0; font-size:14px; }
-
-    /* ========= Cards & Grids ========= */
-    .card{ background: linear-gradient(180deg, color-mix(in oklab, var(--surface) 94%, transparent), var(--surface)); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); overflow:clip; }
-    .card__body{ padding:20px; display:grid; gap:14px; }
-    .card--feature{ position:relative; }
-    .card--feature::before{ content:""; position:absolute; inset:0; border-left:8px solid; border-image:linear-gradient(180deg,var(--brand),var(--accent)) 1; border-radius:var(--radius); pointer-events:none; mix-blend:normal; }
-
-    .grid{ display:grid; gap:20px; grid-template-columns:repeat(12,1fr); }
-    .grid > *{ grid-column:span 12; }
-    @media(min-width:960px){ .grid > *{ grid-column:span 6; } .grid > .span-2{ grid-column:span 12; } }
-
-    /* ========= Featured (祈萃) ========= */
-    .feature-wrap{ display:grid; gap:24px; grid-template-columns:1fr; }
-    @media(min-width:980px){ .feature-wrap{ grid-template-columns: 1fr 1.2fr; } }
-    .feature-meta{ display:grid; gap:10px; align-content:start; }
-    .meta-list{ list-style:none; padding:0; margin:0; display:grid; gap:8px; }
-    .meta-list li{ display:flex; justify-content:space-between; padding:10px 12px; background:var(--surface-2); border:1px solid var(--line); border-radius:12px; color:var(--muted); }
-    .meta-list strong{ color:var(--text); }
-
-    .gallery{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-
-    /* ========= Media Blocks ========= */
-    .iframe-wrap{ position:relative; width:100%; aspect-ratio:16/9; }
-    .iframe-wrap iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:14px; }
-    .media-duo{ display:grid; gap:14px; grid-template-columns:1fr; }
-    @media(min-width:820px){ .media-duo{ grid-template-columns:1fr 1fr; } }
-
-    /* ========= About / Skills ========= */
-    .about-grid{ display:grid; gap:24px; grid-template-columns:1fr; }
-    @media(min-width:900px){ .about-grid{ grid-template-columns:1.3fr 1fr; } }
-    .chips{ display:flex; gap:10px; flex-wrap:wrap; padding:0; margin:0; list-style:none; }
-    .chip{ font-size:14px; color:var(--muted); border:1px solid var(--line); background:var(--surface-2); padding:8px 12px; border-radius:999px; }
-
-    /* ========= Buttons ========= */
-    .btn{ display:inline-flex; align-items:center; gap:.5rem; padding:12px 18px; border-radius:12px; font-weight:700; border:1px solid var(--line); background:var(--surface); color:var(--text); text-decoration:none; box-shadow:var(--shadow); transition: transform .12s ease, background .2s ease, border-color .2s ease; }
-    .btn:hover{ transform:translateY(-1px); text-decoration:none; }
-    .btn.primary{ background:linear-gradient(180deg, color-mix(in oklab, var(--brand) 92%, #fff 0%), var(--brand)); color:#fff; border-color:transparent; }
-    .btn.ghost{ background:transparent; box-shadow:none; }
-    .btn.tiny{ padding:8px 12px; font-size:14px; box-shadow:none; }
-    .inline-center{ display:flex; justify-content:center; }
-
-    /* ========= Footer ========= */
-    .site-footer{ border-top:1px solid var(--line); color:var(--muted); padding:28px 0; }
-
-    /* ========= Motion ========= */
-    @media(prefers-reduced-motion:no-preference){ .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; } .reveal.in{ opacity:1; transform:none; } }
-    @media(prefers-reduced-motion:reduce){ .reveal{ opacity:1 !important; transform:none !important; } }
-
-    /* ========= Accessibility ========= */
-    :focus-visible{ outline:2px dashed color-mix(in oklab, var(--brand) 70%, #fff 0%); outline-offset:2px; }
+    .media-side-by-side img,
+    .media-side-by-side video {
+      width: 48%;
+      aspect-ratio: 4 / 3; 
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
   </style>
 </head>
 <body>
-  <a class="visually-hidden" href="#main">本文へスキップ</a>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#qisui">祈萃</a>
+    <a href="#works">Works</a>
+  </nav>
 
-  <!-- ===== Header ===== -->
-  <header class="site-header" id="top">
-    <div class="container wrap">
-      <a class="brand" href="#top" aria-label="Top">TN</a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#featured" class="is-active">祈萃</a>
-        <a href="#works">Works</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="theme-toggle" aria-label="テーマ切替">◐</button>
+  <div class="hero-area">
+    <header id="hero">
+      <h1>Tomoki Noguchi</h1>
+    </header>
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p>
+        筑波大学理工学群 応用理工学類 冨田研究室所属<br>
+        現在は大学内の研究施設や高エネルギー加速器研究機構(KEK)で<br>加速器を使ったイオンビームの研究に従事。<br><br>
+        個人活動<br>
+        音楽イベントオーガナイズチーム祈萃の運営及びDJ/VJ<br>
+        ダイビング動画編集
+      </p>
+    </section>
+  </div>
+
+  <div class="skills-area" id="skills">
+    <h2 style="text-align:center;">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">Premiere Pro<br></div>
+      <div class="skill-card">After Effects<br></div>
+      <div class="skill-card">TouchDesigner<br></div>
+      <div class="skill-card">Languages<br><small>C,Python,HTML,CSS,JavaScript</small></div>
     </div>
-  </header>
+  </div>
 
-  <main id="main">
-    <!-- ===== Hero ===== -->
-    <section class="hero section reveal">
-      <div class="container">
-        <h1 class="hero__title">Tomoki Noguchi — <span class="underline">UI/UX & Project Orchestration</span></h1>
-        <p class="hero__lead">自主企画 <span class="underline">祈萃（qisui）</span> を軸に、映像・Web・研究を横断。企画と体験設計、そして運営まで一気通貫で担います。</p>
-      </div>
-    </section>
+  <div class="main-area">
+    <section id="qisui" >
+      <h2>祈萃</h2>
 
-    <!-- ===== Featured: 祈萃 ===== -->
-    <section id="featured" class="section reveal">
-      <div class="container">
-        <header class="section__head">
-          <h2>祈萃</h2>
-          <p class="section__kicker">Music Party Series / 自主企画（最重要）</p>
-        </header>
+      <div class="about qisui card">
+        <p>
+          祈萃(qisui)とは回ごとに様々な音楽をフィーチャリングして開催される、ミュージックパーティーシリーズです。<br>
+          毎回様々なコミュニティからDJをお呼びし、コンセプチュアルなパーティーを開催します。<br>
+          6/13につくば市内でParty(Pacific Groove)を開催しました。<br>
+          過去最多の70人を超える来場者を達成し、全体で約25万円の売り上げを記録しました。
+        </p>
+        <div class="photo-gallery">
+          <img src="assets/IMG_8721.jpg" alt="NJN" />
+          <img src="assets/IMG_8722.jpg" alt="Pacific Groove" />
+        </div>
 
-        <article class="card card--feature">
-          <div class="card__body feature-wrap">
-            <!-- Meta side -->
-            <aside class="feature-meta">
-              <p>祈萃(qisui)とは回ごとに様々な音楽をフィーチャリングして開催される、ミュージックパーティーシリーズです。毎回様々なコミュニティからDJをお呼びし、コンセプチュアルなパーティーを開催します。</p>
-              <ul class="meta-list" aria-label="Metrics">
-                <li><span>開催</span><strong>6/13 @ つくば</strong></li>
-                <li><span>来場者数</span><strong>70+ 名</strong></li>
-                <li><span>売上</span><strong>約25万円</strong></li>
-              </ul>
-              <div class="inline-center">
-                <a href="https://www.instagram.com/qisui.sui" class="btn ghost" target="_blank" rel="noreferrer">
-                  <img src="assets/qisui_icon_cropped.png" alt="qisui" width="22" height="22" style="border-radius:6px"> Instagram
-                </a>
-              </div>
-            </aside>
-            <!-- Visual side -->
-            <div>
-              <div class="gallery" aria-label="Event photos">
-                <img src="assets/IMG_8721.jpg" alt="祈萃 パーティー写真1" loading="lazy" />
-                <img src="assets/IMG_8722.jpg" alt="祈萃 パーティー写真2" loading="lazy" />
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ===== Works ===== -->
-    <section id="works" class="section reveal">
-      <div class="container">
-        <header class="section__head">
-          <h2>Works</h2>
-          <p class="section__kicker">動画 / Web / 制作</p>
-        </header>
-
-        <div class="grid">
-          <!-- Work 1 -->
-          <article class="card">
-            <div class="card__body">
-              <h3 class="h3">【Time to Dive】</h3>
-              <div class="iframe-wrap">
-                <iframe src="https://www.youtube.com/embed/OnGm9opuY7U" title="Time to Dive" allowfullscreen loading="lazy"></iframe>
-              </div>
-              <p>ダイビングサイトDivingPartner始動を記念して制作したPV。</p>
-              <p class="h3" style="font-size:15px; color:var(--muted); margin:6px 0 0;">About DivingPartner</p>
-              <p>ダイビングの記録を残せるダイバー向けサイトです。</p>
-              <div class="inline-center">
-                <a href="https://diving-partner2.web.app" target="_blank" rel="noreferrer" class="btn tiny ghost">
-                  <img src="assets/S__44736520.jpg" alt="" width="20" height="20" style="border-radius:4px"> Website
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Work 2 -->
-          <article class="card">
-            <div class="card__body">
-              <h3 class="h3">【Into the Blue】</h3>
-              <div class="iframe-wrap">
-                <iframe src="https://www.youtube.com/embed/CHw0sFkeuFI" title="Into the Blue" allowfullscreen loading="lazy"></iframe>
-              </div>
-              <p>所属サークル新歓用PV。サークルメンバーが合宿で撮影していた動画や、石垣島のダイビング旅行で撮影した動画を使用して作成しました。</p>
-            </div>
-          </article>
-
-          <!-- Work 3 (wide) -->
-          <article class="card span-2">
-            <div class="card__body">
-              <h3 class="h3">【Key System】</h3>
-              <div class="media-duo">
-                <img src="assets/IMG_8677.HEIC" alt="Key System Setup" loading="lazy" onerror="this.onerror=null;this.src='assets/IMG_8677.jpg'" />
-                <video controls preload="metadata">
-                  <source src="assets/IMG_8723.mp4" type="video/mp4" />
-                  お使いのブラウザは video タグをサポートしていません。
-                </video>
-              </div>
-              <p>研究室居室に取り付けたドアの開錠システム。</p>
-              <p>詳細な制御コードは以下のGitHub Gistに掲載：
-                <a href="https://gist.github.com/kinpana/c4d87ae221a50d3606670d0e6ae0cb66" target="_blank" rel="noreferrer">▶ Pythonコード（GitHub Gist）</a>
-              </p>
-            </div>
-          </article>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <a href="https://www.instagram.com/qisui.sui" target="_blank">
+            <img src="assets/qisui_icon_cropped.png" alt="Instagram" width="60" height="60" style="border-radius: 12px;" />
+          </a>
+          <p style="margin-top: 0.5rem;">Instagram</p>
         </div>
       </div>
     </section>
 
-    <!-- ===== About ===== -->
-    <section id="about" class="section reveal">
-      <div class="container">
-        <header class="section__head">
-          <h2>About</h2>
-          <p class="section__kicker">Profile / Skills</p>
-        </header>
+    <section id="works">
+      <h2>Works</h2>
 
-        <article class="card">
-          <div class="card__body about-grid">
-            <div>
-              <p>筑波大学理工学群 応用理工学類 冨田研究室所属。現在は大学内の研究施設や高エネルギー加速器研究機構(KEK)で、加速器を使ったイオンビームの研究に従事。</p>
-              <p>個人活動：音楽イベントオーガナイズチーム「祈萃(qisui)」の運営およびDJ/VJ、ダイビング動画編集。</p>
-            </div>
-            <div>
-              <h3 class="h3" style="font-size:18px; margin:0 0 6px;">Skills</h3>
-              <ul class="chips" role="list">
-                <li class="chip" role="listitem">Premiere Pro</li>
-                <li class="chip" role="listitem">After Effects</li>
-                <li class="chip" role="listitem">TouchDesigner</li>
-                <li class="chip" role="listitem">C</li>
-                <li class="chip" role="listitem">Python</li>
-                <li class="chip" role="listitem">HTML</li>
-                <li class="chip" role="listitem">CSS</li>
-                <li class="chip" role="listitem">JavaScript</li>
-              </ul>
-            </div>
+      <div class="video-grid">
+        <div class="work-item video card">
+          <h3>【Time to Dive】</h3>
+          <div class="video-frame">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/OnGm9opuY7U" frameborder="0" allowfullscreen></iframe>
           </div>
-        </article>
-      </div>
-    </section>
+          <p>ダイビングサイトDivingPartner始動を記念して制作したPV<br></p>
+          <h5>・About DivingPartner</h5>
+          <p>
+            ダイビングの記録を残せるダイバー向けサイトです。
+          </p>
+          <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="https://diving-partner2.web.app" target="_blank">
+              <img src="assets/S__44736520.jpg" alt="Website" width="60" height="60" style="border-radius: 12px;" />
+            </a>
+            <p style="margin-top: 0.5rem;">Website</p>
+          </div>
+        </div>
 
-    <!-- ===== Contact ===== -->
-    <section id="contact" class="section reveal">
-      <div class="container">
-        <header class="section__head">
-          <h2>Contact</h2>
-          <p class="section__kicker">お仕事・ご相談</p>
-        </header>
-        <div class="inline-center">
-          <a class="btn primary" href="mailto:you@example.com">メールする</a>
+        <div class="work-item video card">
+          <h3>【Into the Blue】</h3>
+          <div class="video-frame">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/CHw0sFkeuFI" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <p>
+            所属サークル新歓用PV<br><br>
+            サークルメンバーが合宿で撮影していた動画や、石垣島のダイビング旅行で撮影した動画を使用して作成しました。<br>
+          </p>
         </div>
       </div>
+
+      <div class="work-item key system card">
+        <h3>【Key System】</h3>
+        <div class="media-side-by-side">
+          <img src="assets/IMG_8677.HEIC" alt="Key System Setup" />
+          <video controls>
+           <source src="assets/IMG_8723.mp4" type="video/mp4">
+           お使いのブラウザは video タグをサポートしていません。
+          </video>
+        </div>
+        
+        <p>研究室居室に取り付けたドアの開錠システム</p>
+        <p>
+          詳細な制御コードは以下のGitHub Gistに掲載しています：<br>
+          <a href="https://gist.github.com/kinpana/c4d87ae221a50d3606670d0e6ae0cb66" target="_blank">
+            ▶ Pythonコード（GitHub Gist）
+          </a>
+        </p>
+      </div>
     </section>
-  </main>
-
-  <!-- ===== Footer ===== -->
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="y"></span> Tomoki Noguchi</small>
-    </div>
-  </footer>
-
-  <script>
-    // 年表示
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // テーマ切替
-    const btn = document.querySelector('.theme-toggle');
-    const KEY = 'pref-theme';
-    const setTheme = t => { document.documentElement.dataset.theme = t; localStorage.setItem(KEY, t); };
-    btn.addEventListener('click', () => {
-      const cur = document.documentElement.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      setTheme(cur === 'dark' ? 'light' : 'dark');
-    });
-    const saved = localStorage.getItem(KEY); if (saved) document.documentElement.dataset.theme = saved;
-
-    // 現在セクションのハイライト
-    const links = [...document.querySelectorAll('.nav a')];
-    const map = new Map(links.map(a => [a.getAttribute('href'), a]));
-    const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.remove('is-active')); const a = map.get('#'+e.target.id); if(a) a.classList.add('is-active'); } });
-    },{ rootMargin:'-50% 0px -40% 0px', threshold:0.05 });
-    ['featured','works','about','contact'].forEach(id=>{ const el=document.getElementById(id); if(el) obs.observe(el); });
-
-    // フェードイン（軽量 & reduced-motion対応）
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(!prefersReduced){
-      const ro = new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); }); }, { threshold:0.08 });
-      document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
-    } else { document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')); }
-  </script>
+  </div>
 </body>
 </html>
